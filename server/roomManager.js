@@ -34,7 +34,7 @@ class RoomManager {
         const room = this.rooms.get(roomId);
         if (room) {
             room.history.push(stroke);
-            room.redoStack = []; // Clear redo stack on new action
+            room.redoStack = [];
             return true;
         }
         return false;

@@ -10,7 +10,6 @@ app.use(cors());
 const path = require('path');
 if (process.env.NODE_ENV === 'production') {
     const clientDistPath = path.join(__dirname, '../client/dist');
-    console.log('Serving static files from:', clientDistPath);
     app.use(express.static(clientDistPath));
     app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, '../client/dist/index.html'));
