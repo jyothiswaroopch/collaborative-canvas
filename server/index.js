@@ -10,7 +10,9 @@ app.use(cors());
 // Serve static files from the React client in production
 const path = require('path');
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client/dist')));
+    const clientDistPath = path.join(__dirname, '../client/dist');
+    console.log('Serving static files from:', clientDistPath);
+    app.use(express.static(clientDistPath));
     app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, '../client/dist/index.html'));
     });
