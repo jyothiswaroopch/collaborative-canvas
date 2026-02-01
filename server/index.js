@@ -7,7 +7,6 @@ const roomManager = require('./roomManager');
 const app = express();
 app.use(cors());
 
-// Serve static files from the React client in production
 const path = require('path');
 if (process.env.NODE_ENV === 'production') {
     const clientDistPath = path.join(__dirname, '../client/dist');
