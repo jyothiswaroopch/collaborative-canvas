@@ -1,13 +1,18 @@
-# Real-Time Collaborative Drawing Canvas
+# Real-Time Collaborative Canvas 🎨
 
-A real-time multi-user drawing application using the HTML5 Canvas API and WebSockets.
+A full-stack drawing application that allows multiple users to draw on the same canvas simultaneously. Built to demonstrate proficiency with **WebSockets** and the **HTML5 Canvas API**.
 
-## Features
-- **Real-time Drawing**: See other users draw as it happens.
-- **Collaborative**: Multiple users on the same canvas.
-- **Global Undo/Redo**: Undo actions affect the shared canvas state.
-- **User Presence**: See cursors of other connected users.
-- **Tools**: Brush, Eraser, Colors, Stroke Width.
+**Key Features:**
+*   🚀 **Real-Time Sync**: Instant drawing updates across all connected clients using Socket.io.
+*   🔄 **Global Undo/Redo**: Shared history stack that handles multi-user actions seamlessly.
+*   👥 **Live Presence**: See cursors and names of other users in real-time.
+*   🎨 **Drawing Tools**: Brush, Eraser, Color Picker, and Adjustable Stroke Width.
+*   🛡️ **Conflict Resolution**: "Last Write Wins" strategy for history synchronization.
+
+## Tech Stack
+*   **Frontend**: React, Vite
+*   **Backend**: Node.js, Express, Socket.io
+*   **Graphics**: Native HTML5 Canvas API (No external drawing libraries)
 
 ## Prerequisites
 - Node.js installed.
@@ -22,7 +27,6 @@ npm install
 npm run dev
 # Server runs on http://localhost:3000
 ```
-(You may need to configure the port in `.env` or defaults to 3000)
 
 ### 2. Start the Client
 Navigate to the `client` directory:
@@ -34,14 +38,14 @@ npm run dev
 ```
 
 ## Testing with Multiple Users
-1. Open the application in one browser window/tab.
-2. Open the application in a second window/tab (or Incognito mode).
-3. Draw in one window and watch it appear in the other.
+1. Open the application in one browser window.
+2. Open the application in a second window (or Incognito mode).
+3. Draw in one window and match it appear instantly in the other.
+4. Test **Global Undo/Redo** by drawing in both windows and clicking Undo/Redo to see synchronized state changes.
 
 ## Known Issues
-- Network latency may cause slight delays in cursor updates.
-- High-frequency drawing events are throttled for performance.
+- Network latency may cause slight delays in cursor updates (simulated or real).
+- High-frequency drawing events are optimized, but very poor connections might see "jumpy" lines.
 
 ## Time Spent
-- Project Setup: ~1 hour
-- Implementation: TBD
+- ~4 hours (Setup, Implementation, Refactoring, Documentation)
